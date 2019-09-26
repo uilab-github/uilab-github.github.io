@@ -23,7 +23,8 @@
 
 <script>
 import VueMarkdown from 'vue-markdown'
-const BASE_URL = process.env.BASE_URL;
+import { sanitizeUrls } from '@/helpers/path.js'
+
 export default {
   name: 'Member',
   components: {
@@ -32,14 +33,9 @@ export default {
   props: {
     member: Object
   },
-  data() {
-    return {
-      baseUrl: BASE_URL
-    }
-  },
   methods: {
-    sanitizeUrls(url) {
-      return url.replace(/@\//g, this.baseUrl);
+    sanitizeUrls(text) {
+      return sanitizeUrls(text)
     },
     getStyleWithImage(url) {
       return { backgroundImage: `url("${this.sanitizeUrls(url)}")` }

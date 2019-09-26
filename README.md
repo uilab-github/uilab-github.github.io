@@ -35,3 +35,5 @@ Build with:
 ```bash
 $ yarn build
 ```
+
+**Be aware** that files in `/dist`, `/lib`, `/assets`, and `/index.html` are dynamically generated when building the project. Do **NOT** modify these files directly. 

@@ -11,21 +11,17 @@
 </template>
 
 <script>
-const BASE_URL = process.env.BASE_URL;
+import { sanitizeUrls } from '@/helpers/path.js'
+
 export default {
   name: 'AppHeader',
   props: {
     size: String,
     backgroundSrc: String
   },
-  data() {
-    return {
-      baseUrl: BASE_URL
-    }
-  },
   methods: {
     getStyleWithBgImage() {
-      const url = (this.backgroundSrc || '').replace(/@\//g, this.baseUrl)
+      const url = sanitizeUrls(this.backgroundSrc)
       return { backgroundImage: `linear-gradient(
           rgba(0, 0, 0, 0.5), 
           rgba(0, 0, 0, 0.5)

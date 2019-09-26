@@ -23,7 +23,7 @@
 
 <script>
 import VueMarkdown from 'vue-markdown'
-const BASE_URL = process.env.BASE_URL;
+import { sanitizeUrls } from '@/helpers/path.js'
 export default {
   name: 'research-item',
   components: {
@@ -34,20 +34,12 @@ export default {
     tags: Object,
     activeTagId: String
   },
-  data() {
-    return {
-      baseUrl: BASE_URL
-    }
-  },
   methods: {
     isHidden() {
       return (this.activeTagId !== null) && !this.item.tags.includes(this.activeTagId)
     },
     sanitizeUrls(text) {
-      if (!text) {
-        return ''
-      }
-      return text.replace(/@\//g, this.baseUrl)
+      return sanitizeUrls(text)
     },
   }
 }
