@@ -1,6 +1,6 @@
 {
-  "name": "research-group-homepage",
-  "version": "0.1.0",
+  "name": "uilab-kaist.github.io",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
