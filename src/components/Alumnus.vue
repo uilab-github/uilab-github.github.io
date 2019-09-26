@@ -40,7 +40,7 @@ export default {
       return sanitizeUrls(text)
     },
     getStyleWithImage(url) {
-      return { backgroundImage: `url("${this.sanitizeUrl(url)}")` }
+      return { backgroundImage: `url("${this.sanitizeUrls(url)}")` }
     }
   }
 }
