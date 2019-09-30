@@ -28,7 +28,7 @@ export default {
   name: 'AppFooter',
   props: {
     scrolled: Boolean,
-  },
+  }
 }
 </script>
 

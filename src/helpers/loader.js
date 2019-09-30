@@ -6,7 +6,7 @@ sheets.setKey(API_KEY)
 
 export async function loadData() {
   const ranges = [
-    'Announcements!A2:B',
+    'Announcements!A2:C',
     'Members!A2:H',
     'Research!A2:F',
     'Tags!A2:F',
@@ -24,7 +24,14 @@ export async function loadData() {
 
 function getAnnouncementsFromValues(values) {
   const announcements = []
+  const now = new Date()
   for (let row of values) {
+    const expireAt = row[2] ? new Date(Date.parse(row[2])) : null
+    if (!row[1]) {
+      continue
+    } else if (expireAt && (expireAt < now)) {
+      continue
+    }
     announcements.push({
       title: row[0],
       content: row[1]

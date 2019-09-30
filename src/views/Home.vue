@@ -4,7 +4,7 @@
       <h1>Users &amp; Information Lab. @ KAIST</h1><br />
       <small>Artificial Intelligence | Social Computing | Interactive Computing</small>
     </screen>
-    <div class="row">
+    <div v-if="announcements.length > 0" class="row">
       <div class="container">
         <announcements :announcements="announcements" />
       </div>
