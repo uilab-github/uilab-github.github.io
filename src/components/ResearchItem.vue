@@ -16,7 +16,11 @@
     <div class="authors">{{ item.authors }}</div>
     <div class="booktitle">{{ item.booktitle }}</div>
     <div class="link-buttons link-buttons-small">
-      <vue-markdown :source="sanitizeUrls(item.links)" :breaks="false" />
+      <vue-markdown
+        :source="sanitizeUrls(item.links)"
+        :breaks="false"
+        :anchorAttributes="{ target: '_blank' }"
+      />
     </div>
   </div>
 </template>

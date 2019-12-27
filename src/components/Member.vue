@@ -14,7 +14,11 @@
           <vue-markdown :source="member.description"/>
         </div>
         <div class="link-buttons">
-          <vue-markdown :source="sanitizeUrls(member.links)" :breaks="false" />
+          <vue-markdown
+            :source="sanitizeUrls(member.links)"
+            :breaks="false"
+            :anchorAttributes="{ target: '_blank' }"
+          />
         </div>
       </div>
     </div>
