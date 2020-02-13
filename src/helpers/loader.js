@@ -27,6 +27,7 @@ function getAnnouncementsFromValues(values) {
   const now = new Date()
   for (let row of values) {
     const expireAt = row[2] ? new Date(Date.parse(row[2])) : null
+    console.log(row, expireAt, now)
     if (!row[1]) {
       continue
     } else if (expireAt && (expireAt < now)) {
