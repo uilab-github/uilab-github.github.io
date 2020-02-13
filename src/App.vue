@@ -79,6 +79,7 @@ export default {
       const pathname = window.location.pathname
       const targetUrl = this.redirections[pathname]
       if (targetUrl) {
+        this.loading = true
         window.location.href = targetUrl
       }
     },
