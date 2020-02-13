@@ -72,10 +72,12 @@ export default {
       this.links = data.links
       this.redirections = data.redirections
       this.handleRedirections()
+      window.addEventListener('locationchange', this.handleRedirections)
       this.loading = false
     },
     handleRedirections() {
       const pathname = window.location.pathname
+      console.log('handle-redirections', pathname)
       const targetUrl = this.redirections[pathname]
       if (targetUrl) {
         window.location.href = targetUrl
