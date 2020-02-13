@@ -10,7 +10,8 @@ export async function loadData() {
     'Members!A2:H',
     'Research!A2:F',
     'Tags!A2:F',
-    'Links!A2:G'
+    'Links!A2:G',
+    'Redirections!A2:B',
   ]
   const response = await sheets.getRanges(DOC_ID, ranges)
   const valueRanges = response.valueRanges
@@ -19,7 +20,8 @@ export async function loadData() {
   const research = getResearchFromValues(valueRanges[2].values)
   const tags = getTagsFromValues(valueRanges[3].values)
   const links = getLinksFromValues(valueRanges[4].values)
-  return { announcements, members, research, tags, links }
+  const redirections = getRedirectionsFromValues(valueRanges[5].values)
+  return { announcements, members, research, tags, links, redirections }
 }
 
 function getAnnouncementsFromValues(values) {
@@ -129,4 +131,13 @@ function getLinksFromValues(values) {
     groups.push(group)
   }
   return groups
+}
+
+function getRedirectionsFromValues(values) {
+  const redirections = {}
+  for (const row of values) {
+    const src = row[0].trim()
+    redirections[src] = row[1]
+  }
+  return redirections
 }

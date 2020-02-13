@@ -1,8 +1,12 @@
 <template>
   <div id="app">
-    <div v-if="loading" class="spinner-container">
-      <spinner />
-    </div>
+    <loading 
+      :active="loading"
+      color="#fff"
+      height="64"
+      width="64"
+      background-color="#000"
+    ></loading>
     <app-header :scrolled="scrolled" :loading="loading" />
     <section class="body-content">
       <transition
@@ -24,16 +28,17 @@
 
 <script>
 import '@/styles/default.css'
+import 'vue-loading-overlay/dist/vue-loading.css'
 import AppHeader from '@/components/AppHeader.vue'
 import AppFooter from '@/components/AppFooter.vue'
-import Spinner from '@/components/Spinner.vue'
+import Loading from 'vue-loading-overlay'
 import * as loader from '@/helpers/loader.js'
 export default {
   name: 'App',
   components: {
     AppHeader,
     AppFooter,
-    Spinner
+    Loading,
   },
   data() {
     return {
@@ -43,7 +48,8 @@ export default {
       research: [],
       members: [],
       tags: {},
-      links: []
+      links: [],
+      redirections: {},
     }
   },
   created() {
@@ -64,7 +70,16 @@ export default {
       this.members = data.members
       this.tags = data.tags
       this.links = data.links
+      this.redirections = data.redirections
+      this.handleRedirections()
       this.loading = false
+    },
+    handleRedirections() {
+      const pathname = window.location.pathname
+      const targetUrl = this.redirections[pathname]
+      if (targetUrl) {
+        window.location.href = targetUrl
+      }
     },
     handleScroll() {
       const top = window.scrollY

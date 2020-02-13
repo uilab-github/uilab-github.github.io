@@ -38,13 +38,6 @@ body {
   padding-bottom: 1rem;
 }
 
-.spinner-container {
-  position: fixed;
-  right: 0;
-  top: 0;
-  z-index: 999;
-}
-
 .row {
   background-color: var(--white-color);
   padding-top: 1rem;
