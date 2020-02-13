@@ -18,7 +18,7 @@ However, if you need to upload image files to use in the website or you can't us
 
 **Be aware** of the fact that **`{repository}/assets` directory is dynamically generated** when building the project. **Your files in that directory will be erased** and replaced by the files in `{repository}/public/assets` when someone builds the project later.
 
-If you are too lazy to setup `yarn` or are accessible to the Windows machines at the time, simply put your files in `{repository}/public/assets/{your_file_path}` and copy those files to `{repository}/assets/{your_file_path}`. 
+If you are too lazy to setup `yarn` or are accessible to the Windows machines only at the time, simply put your files in `{repository}/public/assets/{your_file_path}` and copy those files to `{repository}/assets/{your_file_path}`. 
 
 ## How do I modify the core of this website?
 
