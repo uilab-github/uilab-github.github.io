@@ -3,8 +3,8 @@
     <loading 
       :active="loading"
       color="#fff"
-      height="64"
-      width="64"
+      :height="64"
+      :width="64"
       background-color="#000"
     ></loading>
     <app-header :scrolled="scrolled" :loading="loading" />
@@ -77,7 +77,6 @@ export default {
     },
     handleRedirections() {
       const pathname = window.location.pathname
-      console.log('handle-redirections', pathname)
       const targetUrl = this.redirections[pathname]
       if (targetUrl) {
         window.location.href = targetUrl
