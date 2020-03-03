@@ -50,7 +50,7 @@ export default {
 .member {
   position: relative;
   padding: 1rem 1rem 1rem 6rem;
-  min-height: 7em;
+  min-height: 7rem;
   color: var(--text-color);
   font-size: 0.9rem;
   overflow: auto;
