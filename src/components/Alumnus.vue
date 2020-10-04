@@ -18,7 +18,11 @@
         <vue-markdown :source="member.description"/>
       </div>
       <div class="link-buttons link-buttons-small">
-        <vue-markdown :source="member.links" :breaks="false" />
+        <vue-markdown
+          :source="sanitizeUrls(member.links)"
+          :breaks="false"
+          :anchorAttributes="{ target: '_blank', rel: 'noopener noreferrer' }"
+        />
       </div>
     </div>
   </div>

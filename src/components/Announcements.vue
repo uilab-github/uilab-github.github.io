@@ -10,7 +10,10 @@
         {{ announcement.title }}
       </h4>
       <div class="announcement-content">
-        <vue-markdown :source="announcement.content"/>
+        <vue-markdown
+          :source="announcement.content"
+          :anchorAttributes="{ target: '_blank', rel: 'noopener noreferrer' }"
+        />
       </div>
     </div>
   </div>

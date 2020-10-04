@@ -19,7 +19,7 @@
       <vue-markdown
         :source="sanitizeUrls(item.links)"
         :breaks="false"
-        :anchorAttributes="{ target: '_blank' }"
+        :anchorAttributes="{ target: '_blank', rel: 'noopener noreferrer' }"
       />
     </div>
   </div>
