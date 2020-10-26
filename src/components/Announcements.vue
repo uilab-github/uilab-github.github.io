@@ -3,7 +3,7 @@
     <h3 class="row-title">Announcements</h3>
     <div 
       v-for="(announcement, i) in announcements" 
-      class="announcement row-item"
+      class="announcement row-item expandable"
       :key="i"
     >
       <h4 v-if="announcement.title" class="announcement-title">
