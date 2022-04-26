@@ -20,6 +20,9 @@
         <router-link class="header-menu-item" to="/research">
           Research
         </router-link>
+        <a class="header-menu-item" href="http://demos.uilab.kr/">
+          Demos
+        </a>
         <router-link class="header-menu-item" to="/links">
           Links
         </router-link>
