@@ -4,14 +4,16 @@
     :class="{ 'header-scrolled': scrolled  }"
   >
     <div class="header-content">
-      <div class="logo">
-        <div class="logo-drawing-container">
-          <div class="logo-drawing" ref="logo"></div>
+      <router-link to="/">
+        <div class="logo">
+          <div class="logo-drawing-container">
+            <div class="logo-drawing" ref="logo"></div>
+          </div>
+          <div class="logo-text">USERS &amp;<br />INFORMATION</div>
         </div>
-        <div class="logo-text">USERS &amp;<br />INFORMATION</div>
-      </div>
+      </router-link>
       <div class="header-menu">
-        <router-link class="header-menu-item" to="/">
+        <router-link class="header-menu-item home-item" to="/">
           Home
         </router-link>
         <router-link class="header-menu-item" to="/members">
@@ -20,9 +22,6 @@
         <router-link class="header-menu-item" to="/research">
           Research
         </router-link>
-        <a class="header-menu-item" href="http://demos.uilab.kr/">
-          Demos
-        </a>
         <router-link class="header-menu-item" to="/links">
           Links
         </router-link>
@@ -187,6 +186,12 @@ export default {
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: color 1s ease;
+  }
+}
+
+@media screen and (max-width: 26rem) {
+  .home-item {
+    display: none;
   }
 }
 
