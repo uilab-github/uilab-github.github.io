@@ -1,6 +1,6 @@
 <template>
   <div class="joinus">
-    <screen backgroundSrc="@/images/backgrounds/ducks_grass.jpg">
+    <screen backgroundSrc="@/images/backgrounds/cherry_blossom.jpg">
       <h2>Join U&I Lab.</h2><br />
       <small>Users &amp; Information Lab. @ KAIST</small>
     </screen>

@@ -27,13 +27,13 @@
         <a class="header-menu-item home-item" href="http://demos.uilab.kr/">
           Demos
         </a>
-        <router-link class="header-menu-item" to="/links">
+        <router-link class="header-menu-item home-item" to="/links">
           Links
         </router-link>
         <router-link class="header-menu-item" to="/contact">
           Contact
         </router-link>
-        <router-link class="header-menu-item home-item" to="/joinus">
+        <router-link class="header-menu-item" to="/joinus">
           JoinUs
         </router-link>
       </div>
