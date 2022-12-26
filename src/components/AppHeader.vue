@@ -13,9 +13,11 @@
         </div>
       </router-link>
       <div class="header-menu">
+        <!--
         <router-link class="header-menu-item home-item" to="/">
           Home
         </router-link>
+        -->
         <router-link class="header-menu-item" to="/members">
           Members
         </router-link>
@@ -30,6 +32,9 @@
         </router-link>
         <router-link class="header-menu-item" to="/contact">
           Contact
+        </router-link>
+        <router-link class="header-menu-item home-item" to="/joinus">
+          JoinUs
         </router-link>
       </div>
     </div>

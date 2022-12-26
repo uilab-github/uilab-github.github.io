@@ -5,6 +5,7 @@ import Members from './views/Members.vue'
 import Research from './views/Research.vue'
 import Links from './views/Links.vue'
 import Contact from './views/Contact.vue'
+import JoinUs from './views/Joinus.vue'
 
 Vue.use(Router)
 
@@ -36,6 +37,11 @@ export default new Router({
       path: '/contact',
       name: 'contact',
       component: Contact
+    },
+    {
+      path: '/joinus',
+      name: 'joinus',
+      component: JoinUs
     }
   ]
 })

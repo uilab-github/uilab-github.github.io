@@ -15,6 +15,7 @@
       >
         <router-view 
           :announcements="announcements"
+          :joinus="joinus"
           :research="research" 
           :members="members" 
           :tags="tags" 
@@ -45,6 +46,7 @@ export default {
       scrolled: false,
       loading: false,
       announcements: [],
+      joinus: [],
       research: [],
       members: [],
       tags: {},
@@ -66,6 +68,7 @@ export default {
       this.loading = true
       const data = await loader.loadData()
       this.announcements = data.announcements
+      this.joinus = data.joinus
       this.research = data.research
       this.members = data.members
       this.tags = data.tags

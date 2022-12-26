@@ -7,6 +7,7 @@ sheets.setKey(API_KEY)
 export async function loadData() {
   const ranges = [
     'Announcements!A2:C',
+    'JoinUs!A2:D',
     'Members!A2:H',
     'Research!A2:F',
     'Tags!A2:F',
@@ -16,12 +17,13 @@ export async function loadData() {
   const response = await sheets.getRanges(DOC_ID, ranges)
   const valueRanges = response.valueRanges
   const announcements = getAnnouncementsFromValues(valueRanges[0].values)
-  const members = getMembersFromValues(valueRanges[1].values)
-  const research = getResearchFromValues(valueRanges[2].values)
-  const tags = getTagsFromValues(valueRanges[3].values)
-  const links = getLinksFromValues(valueRanges[4].values)
-  const redirections = getRedirectionsFromValues(valueRanges[5].values)
-  return { announcements, members, research, tags, links, redirections }
+  const joinus = getJoinUsFromValues(valueRanges[1].values)
+  const members = getMembersFromValues(valueRanges[2].values)
+  const research = getResearchFromValues(valueRanges[3].values)
+  const tags = getTagsFromValues(valueRanges[4].values)
+  const links = getLinksFromValues(valueRanges[5].values)
+  const redirections = getRedirectionsFromValues(valueRanges[6].values)
+  return { announcements, joinus, members, research, tags, links, redirections }
 }
 
 function getAnnouncementsFromValues(values) {
@@ -40,6 +42,33 @@ function getAnnouncementsFromValues(values) {
     })
   }
   return announcements
+}
+
+function getJoinUsFromValues(values) {
+  const groups = []
+  const now = new Date()
+  let group = null
+  for (let row of values) {
+    const expireAt = row[3] ? new Date(Date.parse(row[3])) : null
+    if (expireAt && (expireAt < now)) {
+      continue
+    }
+    const type = row[0]
+    if (!group || (group.type !== type)) {
+      if (group) {
+        groups.push(group)
+      }
+      group = { type, joinus: [] }
+    }
+    group.joinus.push({
+      title: row[1],
+      content: row[2]
+    })
+  }
+  if (group) {
+    groups.push(group)
+  }
+  return groups
 }
 
 function getMembersFromValues(values) {
