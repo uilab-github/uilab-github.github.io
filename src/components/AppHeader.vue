@@ -34,7 +34,7 @@
           Contact
         </router-link>
         <router-link class="header-menu-item" to="/joinus">
-          JoinUs
+          Join Us
         </router-link>
       </div>
     </div>
