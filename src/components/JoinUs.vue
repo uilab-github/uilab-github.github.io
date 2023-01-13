@@ -1,5 +1,5 @@
 <template>
-  <div class="row-item">
+  <div class="row-item expandable">
     <div class="join">
       <h4 class="join-title">{{ join.title }}</h4>
       <div class="join-description">

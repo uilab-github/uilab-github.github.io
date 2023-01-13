@@ -1,7 +1,7 @@
 <template>
   <div class="joinus">
     <screen backgroundSrc="@/images/backgrounds/cherry_blossom.jpg">
-      <h2>Join U&I Lab.</h2><br />
+      <h2>Join U&amp;I Lab.</h2><br />
       <small>Users &amp; Information Lab. @ KAIST</small>
     </screen>
     <div class="row" v-for="(group, i) in joinus" :key="i">
