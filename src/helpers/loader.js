@@ -10,6 +10,7 @@ export async function loadData() {
     'JoinUs!A2:D',
     'Members!A2:H',
     'Research!A2:F',
+    'Demos!A2:G',
     'Tags!A2:F',
     'Links!A2:G',
     'Redirections!A2:B',
@@ -20,10 +21,11 @@ export async function loadData() {
   const joinus = getJoinUsFromValues(valueRanges[1].values)
   const members = getMembersFromValues(valueRanges[2].values)
   const research = getResearchFromValues(valueRanges[3].values)
-  const tags = getTagsFromValues(valueRanges[4].values)
-  const links = getLinksFromValues(valueRanges[5].values)
-  const redirections = getRedirectionsFromValues(valueRanges[6].values)
-  return { announcements, joinus, members, research, tags, links, redirections }
+  const demos = getDemosFromValues(valueRanges[4].values)
+  const tags = getTagsFromValues(valueRanges[5].values)
+  const links = getLinksFromValues(valueRanges[6].values)
+  const redirections = getRedirectionsFromValues(valueRanges[7].values)
+  return { announcements, joinus, members, research, demos, tags, links, redirections }
 }
 
 function getAnnouncementsFromValues(values) {
@@ -121,6 +123,22 @@ function getMembersFromValues(values) {
     categories.push(category)
   }
   return categories
+}
+
+function getDemosFromValues(values) {
+  const demos = []
+  for (let row of values) {
+    demos.push({
+      title: row[0],
+      authors: row[1],
+      booktitle: row[2],
+      link: row[3],
+      image: row[4],
+      short: row[5],
+      long: row[6]
+    })
+  }
+  return demos
 }
 
 function getTagsFromValues(values) {

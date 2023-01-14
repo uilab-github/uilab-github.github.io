@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Members from './views/Members.vue'
 import Research from './views/Research.vue'
+import Demos from './views/Demos.vue'
 import Links from './views/Links.vue'
 import Contact from './views/Contact.vue'
 import JoinUs from './views/Joinus.vue'
@@ -27,6 +28,11 @@ export default new Router({
       path: '/research',
       name: 'research',
       component: Research
+    },
+    {
+      path: '/demos',
+      name: 'demos',
+      component: Demos
     },
     {
       path: '/links',

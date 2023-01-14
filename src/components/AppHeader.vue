@@ -24,9 +24,9 @@
         <router-link class="header-menu-item" to="/research">
           Research
         </router-link>
-        <a class="header-menu-item home-item" href="http://demos.uilab.kr/">
+        <router-link class="header-menu-item home-item" to="/demos">
           Demos
-        </a>
+        </router-link>
         <router-link class="header-menu-item home-item" to="/links">
           Links
         </router-link>

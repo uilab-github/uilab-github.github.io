@@ -187,6 +187,21 @@ body {
   margin-left: 0.5rem;
 }
 
+.demo {
+  position: relative;
+  padding: 1rem 1rem 1rem 20.8rem;
+  min-height: 12rem;
+}
+
+.demo-image{
+  position: absolute;
+  left: 0;
+  width: 20rem;
+  height: 100vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 @media screen and (max-width: 64rem) {
   .row-card-item {
     width: 100%;
@@ -197,6 +212,21 @@ body {
     display: block;
     float: left;
     margin-bottom: 0.15rem;
+  }
+
+  .demo {
+    position: relative;
+    padding: 1rem 1rem 1rem 15.8rem;
+    min-height: 12rem;
+  }
+
+  .demo-image{
+    position: absolute;
+    left: 0;
+    width: 15rem;
+    height: 100vh;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 }
 

@@ -14,9 +14,10 @@
         mode="out-in"
       >
         <router-view 
-          :announcements="announcements"
-          :joinus="joinus"
+          :announcements="announcements" 
+          :joinus="joinus" 
           :research="research" 
+          :demos="demos" 
           :members="members" 
           :tags="tags" 
           :links="links"
@@ -48,6 +49,7 @@ export default {
       announcements: [],
       joinus: [],
       research: [],
+      demos: [],
       members: [],
       tags: {},
       links: [],
@@ -70,6 +72,7 @@ export default {
       this.announcements = data.announcements
       this.joinus = data.joinus
       this.research = data.research
+      this.demos = data.demos
       this.members = data.members
       this.tags = data.tags
       this.links = data.links
