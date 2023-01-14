@@ -11,7 +11,7 @@
     </div>
     <div class="row">
       <div class="container">
-        <latest-publications :research="research" :tags="tags" />
+        <latest-publications :research="research" :demos="demos" :tags="tags" />
       </div>
     </div>
   </div>
@@ -32,6 +32,7 @@ export default {
   props: {
     announcements: Array,
     research: Array,
+    demos: Array,
     tags: Object
   }
 }

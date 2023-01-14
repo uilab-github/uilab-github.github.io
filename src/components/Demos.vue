@@ -21,7 +21,7 @@
                 </div>
                 <div class="link-buttons">
                 <vue-markdown
-                    :source="demo.link"
+                    :source="sanitizeUrls(demo.link)"
                     :breaks="false"
                     :anchorAttributes="{ target: '_blank', rel: 'noopener noreferrer' }"
                 />
@@ -52,7 +52,6 @@
     },
   }
   }
-  
   </script>
   
   <style scoped>
