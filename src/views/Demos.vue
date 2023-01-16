@@ -1,6 +1,6 @@
 <template>
     <div class="demos">
-      <screen backgroundSrc="@/images/backgrounds/library.jpg">
+      <screen backgroundSrc="@/images/backgrounds/main_gate_lawn.jpg">
         <h2>Demos</h2><br />
         <small>Users &amp; Information Lab. @ KAIST</small>
       </screen>
