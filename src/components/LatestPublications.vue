@@ -30,7 +30,7 @@
 import ResearchItem from '@/components/ResearchItem.vue'
 import DemoItem from '@/components/DemoItem.vue'
 
-const PUB_LIST_SIZE = 6
+const PUB_LIST_SIZE = 7
 const DEMO_LIST_SIZE = 3
 
 export default {
