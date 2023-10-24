@@ -13,6 +13,19 @@
     <div class="link-buttons link-buttons-large">
       <router-link class="more-button" to="/research">See All</router-link>
     </div>
+    <h3 class="row-title row-not-first">Latest Manuscripts</h3>
+    <template v-if="research.length > 0">
+      <research-item 
+        v-for="(item, i) in research[1].items.slice(0, manuListSize)" 
+        :key="i" 
+        :item="item" 
+        :tags="tags" 
+        :activeTagId="null" 
+      />
+    </template>
+    <div class="link-buttons link-buttons-large">
+      <router-link class="more-button" to="/research">See All</router-link>
+    </div>
     <h3 class="row-title row-not-first">Latest Demos</h3>
     <template>
       <demo-item 
@@ -47,6 +60,7 @@ export default {
   data() {
     return {
       pubListSize: PUB_LIST_SIZE,
+      manuListSize: PUB_LIST_SIZE - 3,
       demoListSize: DEMO_LIST_SIZE,
     }
   }
