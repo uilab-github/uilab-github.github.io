@@ -53,7 +53,7 @@ export default {
 .research-item {
   padding: 0.3em 0;
   color: var(--text-color);
-  max-height: 13rem;
+  max-height: 16rem;
   transition: all 0.5s ease;
   /* transition: left 2s ease; */
 }
