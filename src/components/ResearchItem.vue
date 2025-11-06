@@ -21,6 +21,7 @@
         :breaks="false"
         :anchorAttributes="{ target: '_blank', rel: 'noopener noreferrer' }"
       />
+      <span class="awards" v-if="item.awards">🏆 {{ item.awards }}</span>
     </div>
   </div>
 </template>

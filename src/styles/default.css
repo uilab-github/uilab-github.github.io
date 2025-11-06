@@ -94,8 +94,22 @@ body {
   max-height: 0;
 }
 
+.awards{
+  display: inline-block;
+  padding: 0.2rem 0.35rem;
+  margin: 0.3rem 0rem 0.3rem 0.15rem;
+  border-radius: 4px;
+  background-color: #ffe082;
+  color: var(--black-color);
+  text-decoration: none;
+  font-size: 0.7rem;
+  align-items: center;
+  line-height: 1.28;
+  font-weight: bold;
+}
+
 .link-buttons {
-  display: block;
+  display: flex;
   overflow: auto;
 }
 
@@ -120,6 +134,7 @@ body {
 .link-buttons.link-buttons-small a {
   padding: 0.2rem 0.35rem;
   margin-right: 0.15rem;
+  line-height: 1.25;
 }
 
 .link-buttons.link-buttons-large a {

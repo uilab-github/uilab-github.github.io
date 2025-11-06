@@ -9,7 +9,7 @@ export async function loadData() {
     'Announcements!A2:C',
     'JoinUs!A2:D',
     'Members!A2:H',
-    'Research!A2:F',
+    'Research!A2:G',
     'Demos!A2:G',
     'Tags!A2:F',
     'Links!A2:G',
@@ -116,7 +116,8 @@ function getMembersFromValues(values) {
       authors: row[2],
       booktitle: row[3],
       links: row[4],
-      tags: (row[5] || '').split(',').map(tag => tag.trim())
+      tags: (row[5] || '').split(',').map(tag => tag.trim()),
+      awards: row[6]
     })
   }
   if (category) {
