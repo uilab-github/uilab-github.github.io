@@ -11,7 +11,7 @@
       />
     </template>
     <div class="link-buttons link-buttons-large">
-      <router-link class="more-button" to="/research">See All</router-link>
+      <router-link class="more-button" to="/research#publications">See all publications &rarr;</router-link>
     </div>
     <h3 class="row-title row-not-first">Latest Manuscripts</h3>
     <template v-if="research.length > 0">
@@ -24,7 +24,7 @@
       />
     </template>
     <div class="link-buttons link-buttons-large">
-      <router-link class="more-button" to="/research">See All</router-link>
+      <router-link class="more-button" to="/research#manuscripts">See all manuscripts &rarr;</router-link>
     </div>
     <h3 class="row-title row-not-first">Latest Demos</h3>
     <template>
@@ -34,7 +34,7 @@
         :item="item" />
     </template>
     <div class="link-buttons link-buttons-large">
-      <router-link class="more-button" to="/demos">See All</router-link>
+      <router-link class="more-button" to="/demos">See all demos &rarr;</router-link>
     </div>
   </div>
 </template>
@@ -72,6 +72,6 @@ export default {
   padding-top: 2.5rem;
 }
 .link-buttons {
-  padding-top: 2.5rem;
+  padding-top: 1.8rem;
 }
 </style>

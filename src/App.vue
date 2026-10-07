@@ -12,6 +12,7 @@
       <transition
         name="fade"
         mode="out-in"
+        @enter="onPageEnter"
       >
         <router-view 
           :announcements="announcements" 
@@ -88,6 +89,11 @@ export default {
         this.loading = true
         window.location.href = targetUrl
       }
+    },
+    // The old page fades out before the new one is mounted, so the router
+    // waits for this signal before scrolling (see scrollBehavior in router.js).
+    onPageEnter() {
+      this.$root.$emit('page-entered')
     },
     handleScroll() {
       const top = window.scrollY

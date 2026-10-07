@@ -13,6 +13,22 @@ Vue.use(Router)
 export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
+  scrollBehavior(to, from, savedPosition) {
+    let position = { x: 0, y: 0 }
+    if (savedPosition) {
+      position = savedPosition
+    } else if (to.hash) {
+      // Leave room for the fixed header
+      position = { selector: to.hash, offset: { x: 0, y: 90 } }
+    }
+    if (to.path === from.path || !from.matched.length) {
+      return position
+    }
+    // Wait until the new page is mounted (the old one fades out first)
+    return new Promise(resolve => {
+      this.app.$once('page-entered', () => resolve(position))
+    })
+  },
   routes: [
     {
       path: '/',

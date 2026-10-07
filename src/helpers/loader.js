@@ -103,6 +103,7 @@ function getMembersFromValues(values) {
  function getResearchFromValues(values) {
   const categories = []
   let category = null
+  let year = null
   for (let row of values) {
     const title = row[0]
     if (!category || (category.title !== title)) {
@@ -110,20 +111,36 @@ function getMembersFromValues(values) {
         categories.push(category)
       }
       category = { title, items: [] }
+      year = null
     }
+    // Rows are sorted newest first, so a row without a year inherits the one above it.
+    year = getYearFromBooktitle(row[3]) || year
     category.items.push({
       title: row[1],
       authors: row[2],
       booktitle: row[3],
       links: row[4],
       tags: (row[5] || '').split(',').map(tag => tag.trim()),
-      awards: row[6]
+      awards: row[6],
+      year
     })
   }
   if (category) {
     categories.push(category)
   }
   return categories
+}
+
+function getYearFromBooktitle(booktitle) {
+  if (!booktitle) {
+    return null
+  }
+  const years = (booktitle.match(/\b(19|20)\d{2}\b/g) || []).map(Number)
+  // Short forms like "USENIX Security '26" or "AAAI-13"
+  const shortYears = (booktitle.match(/(?:'|-)(\d{2})\b/g) || []).map(y => 2000 + Number(y.slice(1)))
+  const maxYear = new Date().getFullYear() + 1
+  const candidates = (years.length ? years : shortYears).filter(y => y <= maxYear)
+  return candidates.length ? Math.max(...candidates) : null
 }
 
 function getDemosFromValues(values) {

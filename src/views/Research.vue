@@ -6,10 +6,10 @@
     </screen>
     <div class="row">
       <div class="container">
-        <tag-selector :tags="tags" v-model="activeTagId" />
+        <tag-selector :tags="tags" :research="research" v-model="activeTagId" />
       </div>
     </div>
-    <div class="row" v-for="(category, i) in research" :key="i">
+    <div class="row" v-for="(category, i) in visibleResearch" :key="i">
       <div class="container">
         <research-category 
           :category="category" 
@@ -40,6 +40,18 @@ export default {
   data() {
     return {
       activeTagId: null
+    }
+  },
+  computed: {
+    // Drop categories with no paper under the selected tag. Removing the row
+    // (rather than hiding it) keeps the alternating row backgrounds correct.
+    visibleResearch() {
+      if (this.activeTagId === null) {
+        return this.research
+      }
+      return this.research.filter(category =>
+        category.items.some(item => item.tags.includes(this.activeTagId))
+      )
     }
   }
 }
